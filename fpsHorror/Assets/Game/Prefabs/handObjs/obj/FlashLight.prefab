@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 7857476347166481571}
   - component: {fileID: 5941029178581661465}
   - component: {fileID: 3081379367323370122}
+  - component: {fileID: 6353118883374319395}
   - component: {fileID: 3136184617288999645}
   m_Layer: 0
   m_Name: FlashLight
@@ -188,6 +189,27 @@ MonoBehaviour:
   ItemExplanation: Oh Shyne
   ItemPicture: {fileID: 21300000, guid: edb36352ca6b2714482049f48b571ba2, type: 3}
   ItemTotal: 12
+--- !u!114 &6353118883374319395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8198976180823951769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 0
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &3136184617288999645
 MonoBehaviour:
   m_ObjectHideFlags: 0

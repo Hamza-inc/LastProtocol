@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class ıtemGravity : MonoBehaviour
+public class ıtemGravity : NetworkBehaviour
 {
     [Header("Gravity")]
     [SerializeField] private Transform groundCh;
@@ -15,24 +16,27 @@ public class ıtemGravity : MonoBehaviour
     private void Update()
     {
         #region Gravity
-        if (!isGround && !hitted)
-        {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, groundCh.forward, out hit, Mathf.Infinity))
+        if (IsOwner){
+            if (!isGround && !hitted)
             {
-                ground = hit.point;
-                hitted = true;
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, groundCh.forward, out hit, Mathf.Infinity))
+                {
+                    ground = hit.point;
+                    hitted = true;
+                }
             }
-        }
 
-        if (transform.position.y > ground.y && hitted)
-        {
-            isGround = false;
-            velocityY += gSpeed * Time.deltaTime;
-            transform.position += new Vector3(0, velocityY, 0) * Time.deltaTime;
-        }
-        else { velocityY = 0; isGround = true; transform.position = ground; }
+            if (transform.position.y > ground.y && hitted)
+            {
+                isGround = false;
+                velocityY += gSpeed * Time.deltaTime;
+                transform.position += new Vector3(0, velocityY, 0) * Time.deltaTime;
+            }
+            else { velocityY = 0; isGround = true; transform.position = ground; }
 
+
+        }
 
 
         #endregion

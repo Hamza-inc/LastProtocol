@@ -2,18 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+using Unity.Netcode;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     public static GameManager instance;
 
-    [SerializeField] private GameObject multiMenu, multiLobby;
+    [SerializeField] private GameObject multiMenu, multiLobby, start;
 
     [SerializeField] private GameObject chatPanel, textObject;
     [SerializeField] private TMP_InputField inputField;
 
-    [SerializeField] private GameObject playerFieldBox, playerCardPrefab;
+    [SerializeField] private GameObject playerFieldBox, playerCardPrefab, playerPrefab;
     [SerializeField] private GameObject readyButton, NotreadyButton, startButton;
+
 
     public Dictionary<ulong, GameObject> playerInfo = new Dictionary<ulong, GameObject>();
 
@@ -163,6 +166,12 @@ public class GameManager : MonoBehaviour
 
         }
     }
+    
+    public void starButton() {
+        SceneManager.LoadScene("Game");
+    }
+
+    
 
     public void RemovePlayerFromDictionary(ulong _steamId)
     {

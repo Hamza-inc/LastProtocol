@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1658374330382023396}
   - component: {fileID: 2485721628106165853}
   - component: {fileID: 2485721628106165827}
+  - component: {fileID: -4723009115033695318}
   - component: {fileID: 2485721628106165852}
   m_Layer: 0
   m_Name: ItmDuck
@@ -73,6 +74,27 @@ MonoBehaviour:
   ItemExplanation: Vak Vak
   ItemPicture: {fileID: 21300000, guid: 74e0f501fcda5ef46b0d334528bd7f2f, type: 3}
   ItemTotal: 31
+--- !u!114 &-4723009115033695318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658374330382023397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1411996012
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &2485721628106165852
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     CharacterController controller;
     Vector3 velocity;
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     public LayerMask mask;
 
+    //----------------------------------
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -24,22 +27,32 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        #region Movement
+        if(IsOwner){
+            Move();
+            Jump();
+            Gravity();
+        }
+    }
+
+
+
+    //*************************************************************************
+
+    private void Move(){
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * horizontal + transform.forward * vertical;
         controller.Move(move * speed * Time.deltaTime);
-        #endregion
-        
-        #region Jump
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            velocity.y += Mathf.Sqrt(jumpHeight * - 3.0f * gravity);
-        }
-        #endregion
+    }
 
-        #region Gravity
+    private void Jump(){
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded){
+            velocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravity);
+        }
+    }
+
+    private void Gravity(){
         isGrounded = Physics.CheckSphere(ground.position, distance, mask);
 
         if (isGrounded && velocity.y < 0f)
@@ -50,6 +63,6 @@ public class PlayerController : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
-        #endregion
     }
+        
 }
