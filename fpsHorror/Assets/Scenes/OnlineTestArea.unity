@@ -1696,6 +1696,7 @@ GameObject:
   - component: {fileID: 776473406}
   - component: {fileID: 776473405}
   - component: {fileID: 776473404}
+  - component: {fileID: 776473408}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1789,6 +1790,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!167 &776473408
+AudioReverbZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 776473403}
+  m_Enabled: 1
+  m_MinDistance: 22.6
+  m_MaxDistance: 33.62
+  m_ReverbPreset: 11
+  m_Room: -1000
+  m_RoomHF: -1000
+  m_DecayTime: 10.05
+  m_DecayHFRatio: 0.23
+  m_Reflections: -602
+  m_ReflectionsDelay: 0.02
+  m_Reverb: 198
+  m_ReverbDelay: 0.03
+  m_HFReference: 5000
+  m_Diffusion: 100
+  m_Density: 100
+  m_LFReference: 250
+  m_RoomLF: 0
 --- !u!1 &859563412
 GameObject:
   m_ObjectHideFlags: 0
@@ -2108,7 +2133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 942888982}
   - component: {fileID: 942888981}
-  - component: {fileID: 942888980}
   - component: {fileID: 942888983}
   m_Layer: 0
   m_Name: Main Camera
@@ -2117,14 +2141,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &942888980
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 942888979}
-  m_Enabled: 1
 --- !u!20 &942888981
 Camera:
   m_ObjectHideFlags: 0
