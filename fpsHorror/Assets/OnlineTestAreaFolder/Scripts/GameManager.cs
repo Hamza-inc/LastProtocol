@@ -74,7 +74,7 @@ public class GameManager : NetworkBehaviour
         public TMP_Text textObject;
     }
 
-    public void SendMessageToChat(string _text, ulong _fromwho, bool _server)
+    public void SendMessageToChat(string _text, ulong _fromwho, bool _server, bool iserror = false)
     {
         if (messageList.Count >= maxMessages)
         {
@@ -97,6 +97,7 @@ public class GameManager : NetworkBehaviour
         GameObject newText = Instantiate(textObject, chatPanel.transform);
         newMessage.textObject = newText.GetComponent<TMP_Text>();
         newMessage.textObject.text = newMessage.text;
+        if (iserror) newMessage.textObject.color = Color.red;
 
         messageList.Add(newMessage);
     }
